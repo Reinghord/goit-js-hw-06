@@ -9,31 +9,18 @@ const { boxes, number, create, destroy } = {
   destroy: document.querySelector("[data-destroy]"),
 };
 
-// function createBoxes(amount) {
-//   // console.log("test");
-//   const div = document.createElement("div");
-//   div.style.height = "30px";
-//   div.style.width = "30px";
-//   div.style.backgroundColor = getRandomHexColor();
-//   div.className = "box";
-//   // boxes.append(div);
-//   boxes.insertAdjacentHTML("beforeend", "div");
-//   for (let i = 1; i <= amount; i += 1) {}
-// }
-
-create.addEventListener("click", function createBoxes(amount) {
-  amount = Number(number.value);
+function createBoxes(amount) {
   for (let i = 1; i <= amount; i += 1) {
     const div = document.createElement("div");
-    div.style.height = "30px";
-    div.style.width = "30px";
+    div.style.height = (20 + i * 10).toString() + "px";
+    div.style.width = (20 + i * 10).toString() + "px";
     div.style.backgroundColor = getRandomHexColor();
-    div.className = "box";
     boxes.append(div);
   }
-});
+}
+
+create.addEventListener("click", () => createBoxes(Number(number.value)));
 
 destroy.addEventListener("click", () => {
   boxes.innerHTML = "";
 });
-// console.log(boxes.append(div));

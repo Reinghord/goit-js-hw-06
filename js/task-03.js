@@ -16,7 +16,8 @@ const images = [
 const gallery = document.querySelector(".gallery");
 gallery.style.display = "flex";
 gallery.style.justifyContent = "space-between";
-gallery.style.flexDirection = "column";
+// gallery.style.flexDirection = "column";
+gallery.style.listStyle = "none";
 
 // images.forEach((image) => {
 //   const item = document.createElement("li");

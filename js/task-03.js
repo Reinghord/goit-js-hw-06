@@ -20,18 +20,9 @@ gallery.style.justifyContent = "space-between";
 // gallery.style.flexDirection = "column";
 gallery.style.listStyle = "none";
 
-//Create array to store created Elements before appending to DOM
-const li = [];
-
-//Creating markup and pushing to array
-images.forEach((image) => {
-  const item = document.createElement("li");
-  const picture = document.createElement("img");
-  picture.setAttribute("src", image.url);
-  picture.setAttribute("alt", image.alt);
-  picture.setAttribute("width", "400");
-  item.innerHTML = picture.outerHTML;
-  li.push(item.outerHTML);
+// //Create array to store created Elements before appending to DOM
+const li = images.map((image) => {
+  return `<li><img src="${image.url}" alt="${image.alt}" width="400"></img></li>`;
 });
 
 //Appending array to DOM

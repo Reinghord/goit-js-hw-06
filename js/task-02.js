@@ -16,7 +16,7 @@ ingredients.forEach((ingredient) => {
   item.textContent = ingredient;
   item.classList.add("item");
 
-  return li.push(item);
+  li.push(item);
 });
 
 //Append array into DOM

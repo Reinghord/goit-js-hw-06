@@ -13,27 +13,26 @@ const images = [
   },
 ];
 
+//Some styling for gallery
 const gallery = document.querySelector(".gallery");
 gallery.style.display = "flex";
 gallery.style.justifyContent = "space-between";
 // gallery.style.flexDirection = "column";
 gallery.style.listStyle = "none";
 
-// images.forEach((image) => {
-//   const item = document.createElement("li");
-//   const picture = document.createElement("img");
-//   picture.setAttribute("src", Object.values(image)[0]);
-//   picture.setAttribute(Object.keys(image)[1], Object.values(image)[1]);
-//   picture.setAttribute("width", "400");
-//   gallery.append(item);
-//   item.append(picture);
-// });
+//Create array to store created Elements before appending to DOM
+const li = [];
 
+//Creating markup and pushing to array
 images.forEach((image) => {
-  gallery.insertAdjacentHTML(
-    "beforeend",
-    `<li>
-      <img src="${image.url}" alt="${image.alt}" width="400"></img>
-    </li>`
-  );
+  const item = document.createElement("li");
+  const picture = document.createElement("img");
+  picture.setAttribute("src", image.url);
+  picture.setAttribute("alt", image.alt);
+  picture.setAttribute("width", "400");
+  item.innerHTML = picture.outerHTML;
+  li.push(item.outerHTML);
 });
+
+//Appending array to DOM
+gallery.insertAdjacentHTML("beforeend", li.join(""));

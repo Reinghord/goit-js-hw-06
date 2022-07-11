@@ -7,10 +7,17 @@ const ingredients = [
   "Condiments",
 ];
 
+//Create new array to store all li elements before appending to DOM
+const li = [];
+
+//Push to array
 ingredients.forEach((ingredient) => {
   const item = document.createElement("li");
   item.textContent = ingredient;
   item.classList.add("item");
 
-  return document.querySelector("ul").append(item);
+  return li.push(item);
 });
+
+//Append array into DOM
+document.querySelector("ul").append(...li);

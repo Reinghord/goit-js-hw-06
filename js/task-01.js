@@ -1,11 +1,9 @@
-console.log(
-  "Number of categories:",
-  document.querySelector("#categories").childElementCount
-);
+const query = document.querySelectorAll("li.item");
 
-document.querySelectorAll("li.item").forEach((elem) => {
-  console.log("Elements", elem.children[1].childElementCount);
+console.log("Number of categories:", query[0].parentElement.childElementCount);
+query.forEach((elem) => {
   console.log("Category:", elem.children[0].textContent);
+  console.log("Elements", elem.children[1].childElementCount);
 });
 
 // console.log("Category:", document.querySelector("li.item > h2").textContent);

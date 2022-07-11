@@ -20,10 +20,10 @@ gallery.style.justifyContent = "space-between";
 // gallery.style.flexDirection = "column";
 gallery.style.listStyle = "none";
 
-// //Create array to store created Elements before appending to DOM
+// Create array to store created Elements before appending to DOM
 const li = images.map((image) => {
   return `<li><img src="${image.url}" alt="${image.alt}" width="400"></img></li>`;
 });
 
-//Appending array to DOM
+// Appending array to DOM
 gallery.insertAdjacentHTML("beforeend", li.join(""));
